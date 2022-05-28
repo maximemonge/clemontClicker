@@ -2,19 +2,21 @@ package components
 
 import csstype.*
 import emotion.react.css
+import org.w3c.files.FileReader
 import react.FC
 import react.Props
+import react.dom.html.ImgLoading
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.img
 import react.useState
 
 
 external interface ClemontProps : Props {
-    var nbClic: Int
+    var nbClicProp: Int
 }
 
 val Clemont = FC<ClemontProps> { props ->
-    var nbClic by useState(props.nbClic)
+    var nbClic by useState(props.nbClicProp)
     div {
         css {
             width = 100.pct
@@ -27,7 +29,6 @@ val Clemont = FC<ClemontProps> { props ->
             +"Clémont : $nbClic"
         }
         img {
-            id = "cc-clemont-img"
             src = "https://avatars.githubusercontent.com/u/23107133?v=4"
             css {
                 width = 250.px

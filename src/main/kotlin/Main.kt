@@ -1,15 +1,10 @@
-import components.Clemont
+import components.Contenu
 import kotlinx.browser.document
 import react.create
-import react.dom.render
+import react.dom.client.createRoot
 
 fun main() {
-    var defaultValue: Int = 0
-    val body = document.createElement("div")
-    document.body!!.appendChild(body)
-
-    val clemont = Clemont.create {
-        nbClic = defaultValue
-    }
-    render(clemont, body)
+    val contenu = document.createElement("div")
+    document.body!!.appendChild(contenu)
+    createRoot(contenu).render(Contenu.create{})
 }
