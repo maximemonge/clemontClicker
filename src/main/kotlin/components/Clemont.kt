@@ -1,13 +1,13 @@
 package components
 
 import csstype.*
-import kotlinx.browser.document
+import emotion.react.css
 import react.FC
 import react.Props
-import react.css.css
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.img
 import react.useState
+
 
 external interface ClemontProps : Props {
     var nbClic: Int
@@ -33,11 +33,10 @@ val Clemont = FC<ClemontProps> { props ->
                 width = 250.px
                 height = 250.px
                 borderRadius = 50.pct
+                transform = rotate(nbClic.deg)
             }
             onClick = {
-                var clicVal: Int = nbClic + 1
-                document.getElementById("cc-clemont-img")?.setAttribute("style", "transform: rotate(${clicVal}deg);")
-                nbClic = clicVal
+                nbClic++
             }
         }
     }

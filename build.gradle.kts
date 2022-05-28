@@ -11,9 +11,10 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
-    implementation("org.jetbrains.kotlin-wrappers:kotlin-react:17.0.2-pre.290-kotlin-1.6.10")
-    implementation("org.jetbrains.kotlin-wrappers:kotlin-react-dom:17.0.2-pre.290-kotlin-1.6.10")
-    implementation("org.jetbrains.kotlin-wrappers:kotlin-react-css:17.0.2-pre.290-kotlin-1.6.10")
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-react:18.0.0-pre.331-kotlin-1.6.20")
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-react-dom:18.0.0-pre.331-kotlin-1.6.20")
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-react-css:18.0.0-pre.331-kotlin-1.6.20")
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-csstype:3.0.11-pre.331-kotlin-1.6.20")
 }
 
 kotlin {
