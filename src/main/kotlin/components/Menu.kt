@@ -7,18 +7,17 @@ import react.FC
 import react.Props
 import react.dom.html.ReactHTML.button
 import react.dom.html.ReactHTML.div
-import react.useState
 
 external interface MenuProps : Props {
-    var ongletProp: Onglet
+    var ongletSelectionne: Onglet?
+    var onSelectOnglet: (Onglet) -> Unit
 }
 
 val Menu = FC<MenuProps> { props ->
-    var onglet by useState(props.ongletProp)
     div {
         button {
             onClick = {
-                onglet = Onglet.CLEMONT
+                props.onSelectOnglet(Onglet.CLEMONT)
             }
             css {
                 marginRight = 20.px
@@ -27,7 +26,7 @@ val Menu = FC<MenuProps> { props ->
         }
         button {
             onClick = {
-                onglet = Onglet.PERSONNALISATION
+                props.onSelectOnglet(Onglet.PERSONNALISATION)
             }
             +"Personnalisation"
         }

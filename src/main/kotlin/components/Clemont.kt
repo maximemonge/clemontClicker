@@ -1,11 +1,10 @@
 package components
 
+import common.SkinClemont
 import csstype.*
 import emotion.react.css
-import org.w3c.files.FileReader
 import react.FC
 import react.Props
-import react.dom.html.ImgLoading
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.img
 import react.useState
@@ -13,10 +12,12 @@ import react.useState
 
 external interface ClemontProps : Props {
     var nbClicProp: Int
+    var skinProp: SkinClemont
 }
 
 val Clemont = FC<ClemontProps> { props ->
-    var nbClic by useState(props.nbClicProp)
+    var nbClic: Int by useState(props.nbClicProp)
+    var skin: SkinClemont by useState(props.skinProp)
     div {
         css {
             width = 100.pct
@@ -29,7 +30,7 @@ val Clemont = FC<ClemontProps> { props ->
             +"Clémont : $nbClic"
         }
         img {
-            src = "https://avatars.githubusercontent.com/u/23107133?v=4"
+            src = skin.url
             css {
                 width = 250.px
                 height = 250.px
